@@ -41,9 +41,9 @@ app.use("/api/v1/task", taskRoute);
 app.use("/api/v1/chat", chatRoute);
 
 app.use(express.static(path.join(__dirname,"/Frontend/dist")));
-app.get("*", (req,res) => {
-  res.sendFile(path.resolve(__dirname, "Frontend", "dist", "index.html"));
-})
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../Frontend/dist/index.html'));
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
